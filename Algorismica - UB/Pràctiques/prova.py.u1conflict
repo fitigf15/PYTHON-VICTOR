@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+#
+import math
+import string
+import random
+import time
+def era2():
+    n= input("nombre: ")
+    t1=time.clock()
+    llistaA=range(2,n)
+    llistaB=list()
+    llistaB.append(llistaA[0])
+    num=llistaA[0]
+    del llistaA[0]
+    multiples = range(num,n,num)
+    for i in multiples:
+        if i in llistaA:
+            llistaA.remove(i)
+    for i in llistaA:
+        llistaB.append(i)
+    print llistaB
+    t2=time.clock()
+    print "El temps de proces ha estat", ((t2-t1)*1000)
+    print "Tenim ", len(llistaB)," nombres primers."
+era2()

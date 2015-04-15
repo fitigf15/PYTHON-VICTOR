@@ -1,0 +1,39 @@
+ BellmanFord(Grafo G, nodo_origen s)
+      // inicializamos el grafo. Ponemos distancias a INFINITO menos el nodo origen que 
+      // tiene distancia 0
+       for v ? V[G] do
+           distancia[v]=INFINITO
+           predecesor[v]=NIL
+       distancia[s]=0
+       // relajamos cada arista del grafo tantas veces como número de nodos -1 haya en el grafo
+       for i=1 to |V[G]|-1 do
+           for (u, v) ? E[G] do
+               if distancia[v]>distancia[u] + peso(u, v) then
+                   distancia[v] = distancia[u] + peso (u, v)
+                   predecesor[v] = u
+       // comprobamos si hay ciclos negativo
+       for (u, v) ? E[G] do
+           if distancia[v] > distancia[u] + peso(u, v) then
+               print ("Hay ciclo negativo")
+               return FALSE
+       return TRUE
+  BellmanFord_Optimizado(Grafo G, nodo_origen s)
+       // inicializamos el grafo. Ponemos distancias a INFINITO menos el nodo origen que
+       // tiene distancia 0. Para ello lo hacemos recorriéndonos todos los vértices del grafo
+       for v ? V[G] do
+           distancia[v]=INFINITO
+           padre[v]=NIL
+       distancia[s]=0
+       encolar(s, Q)
+       en_cola[s]=TRUE
+       while Q!=0 then
+           u = extraer(Q)
+           en_cola[u]=FALSE
+           // relajamos las aristas
+           for v ? ady[u] do
+               if distancia[v]>distancia[u] + peso(u, v) then
+                   distancia[v] = distancia[u] + peso (u, v)
+                   padre[v] = u
+                   if en_cola[v]==FALSE then
+                       encolar(v, Q)
+                       en_cola[v]=TRUE

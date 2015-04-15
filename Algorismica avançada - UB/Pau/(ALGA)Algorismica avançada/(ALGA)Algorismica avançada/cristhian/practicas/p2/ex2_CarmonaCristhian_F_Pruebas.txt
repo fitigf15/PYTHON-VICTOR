@@ -1,0 +1,64 @@
+Cristhian carmona Torres
+--------------------------------------------------------------------
+
+Juego de pruebas
+
+--------------------------------------------------------------------
+1.- Problema de la mochila
+	El programa pide por teclado los siguientes datos, (enteros):
+	-Capacidad maxima de la mochila
+	-El numero total de objetos a evaluar
+	-peso, valor: ambos valores iran separados por una coma.
+		Por ejemplo: Peso(Kg), valor($): 2,4
+
+----------------------------
+Codigo a ejecutar
+for x in Mochila():
+    print 'peso: ', x.gP(), 'valor: ', x.gV(), 'beneficio: ', x.gB()
+
+----------------------------
+datos pruebas mochila
+1,12
+10,78
+10,10000
+5,7
+4,4
+6,2
+
+
+--------------------------------------------------------------------
+2.- Problema de secuenciamiento de tareas.
+	Asigna el nombre de la tarea un entero de forma secuencial
+	El programa pide por teclado los siguientes datos
+	-numero total de tareas
+	-H.Ini, Duracion: 1,4 (usando esta forma)
+
+	NOta: la duracion de las tareas entran en minutos
+	se controla que el maximo de una tarea sea de 1440 min (24h * 60 min)
+
+----------------------------	
+Codigo a ejecutar
+for a in secTareas():
+    print '#',a.gP(), 'inicio ', a.gV(), 'duracion ', a.gB()
+
+----------------------------
+datos pruebas tareas
+10,121
+13,40
+12,35
+13,20
+20,45
+13,15
+20,35
+23,90
+
+
+--------------------------------------------------------------------
+3.- Kruskal
+No esta terminado
+
+
+kruskal(G, 0)
+
+
+
